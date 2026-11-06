@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obrigado, Professores!</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fffaf2;
+  color: #292943;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  min-height: 90vh;
+  padding: 35px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at 10% 20%, #ffe3a8 0 8%, transparent 8.5%),
+    radial-gradient(circle at 90% 80%, #d9e9ff 0 10%, transparent 10.5%),
+    #fff1d9;
+  position: relative;
+}
+
+.tag {
+  background: white;
+  border-radius: 30px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7258b8;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(48px, 9vw, 88px);
+  line-height: 1.05;
+  max-width: 850px;
+}
+
+h1 span {
+  color: #f18b4d;
+}
+
+header p {
+  max-width: 580px;
+  margin: 25px 0;
+  color: #666477;
+  line-height: 1.8;
+}
+
+.cta {
+  background: #7258b8;
+  color: white;
+  padding: 15px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.cta:hover {
+  background: #584194;
+  transform: translateY(-4px);
+}
+
+.decoration {
+  position: absolute;
+  font-size: 38px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.d1 { top: 15%; left: 12%; }
+.d2 { top: 23%; right: 13%; animation-delay: 1s; }
+.d3 { bottom: 15%; left: 18%; animation-delay: .5s; }
+.d4 { bottom: 13%; right: 17%; animation-delay: 1.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-15px) rotate(8deg); }
+}
+
+section {
+  padding: 85px 7%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(34px, 5vw, 48px);
+}
+
+.section-title p {
+  color: #777487;
+  margin-top: 10px;
+}
+
+.cards {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border: 2px solid #f0eaf5;
+  padding: 27px 23px;
+  border-radius: 23px;
+  transition: .35s;
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px #29294315;
+}
+
+.emoji {
+  width: 62px;
+  height: 62px;
+  background: #fff0d9;
+  border-radius: 19px;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.subject {
+  color: #8067b9;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 13px;
+}
+
+.card p:last-child {
+  color: #777487;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.special {
+  background: #f0eaff;
+}
+
+.special .card {
+  border-color: #dfd2ff;
+}
+
+.final {
+  text-align: center;
+  background: #292943;
+  color: white;
+  padding: 100px 20px;
+}
+
+.final h2 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(38px, 7vw, 65px);
+  margin-bottom: 20px;
+}
+
+.final p {
+  color: #d4d0e4;
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.9;
+}
+
+.final .heart {
+  font-size: 55px;
+  margin: 25px 0;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+footer {
+  text-align: center;
+  padding: 22px;
+  background: #202035;
+  color: #aaa7bc;
+  font-size: 12px;
+}
+
+@media(max-width: 600px) {
+  section { padding: 65px 6%; }
+  .decoration { font-size: 25px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="tag">UMA HOMENAGEM ESPECIAL • 8º ANO</div>
+
+  <h1>Não é um adeus...<br>é um <span>obrigado!</span></h1>
+
+  <p>
+    Foram provas, trabalhos, broncas, risadas e muitas histórias.
+    E por trás de tudo isso, estavam vocês.
+    Essa página é para agradecer a quem fez parte da nossa jornada!
+  </p>
+
+  <a href="#professores" class="cta">Ver nossa homenagem ↓</a>
+</header>
+
+<section id="professores">
+  <div class="section-title">
+    <h2>Os responsáveis por tudo isso 👀</h2>
+    <p>Um agradecimento especial para cada professor!</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Franco</h3>
+      <div class="subject">Matemática</div>
+      <p>Obrigado por ensinar que tudo tem uma solução... menos entender matemática na primeira explicação!</p>
+    </div>
+
+    <div class="card">
+      <h3>Tussa</h3>
+      <div class="subject">Português</div>
+      <p>Obrigado por nos ensinar a escrever melhor e perceber que até uma vírgula pode fazer diferença!</p>
+    </div>
+
+    <div class="card">
+      <h3>Nur</h3>
+      <div class="subject">Inglês</div>
+      <p>Thank you! Agora sabemos que não é só colocar um "the" na frase e torcer para dar certo!</p>
+    </div>
+
+    <div class="card">
+      <h3>Julio</h3>
+      <div class="subject">História e Geografia</div>
+      <p>Obrigado por nos levar para outros tempos e lugares sem precisar sair da sala de aula!</p>
+    </div>
+
+    <div class="card">
+      <h3>Márcio</h3>
+      <div class="subject">Ciências</div>
+      <p>Obrigado por explicar como o mundo funciona. Pelo menos agora sabemos que nem tudo é mágica!</p>
+    </div>
+
+    <div class="card">
+      <h3>Toninho</h3>
+      <div class="subject">Educação Física</div>
+      <p>Obrigado pelas atividades, jogos e momentos de diversão. E desculpa pelas vezes em que ninguém queria correr!</p>
+    </div>
+
+    <div class="card">
+      <h3>Elis</h3>
+      <div class="subject">Redação</div>
+      <p>Obrigado por nos ensinar que uma boa história precisa de mais do que escrever "era uma vez"!</p>
+    </div>
+
+    <div class="card">
+      <h3>PH</h3>
+      <div class="subject">Empreendedorismo</div>
+      <p>Obrigado por mostrar que grandes ideias podem começar pequenas. Agora só falta ficarmos milionários!</p>
+    </div>
+
+    <div class="card">
+      <h3>Augusto</h3>
+      <div class="subject">Tecnologia</div>
+      <p>Obrigado por apresentar o mundo da tecnologia. E por ter paciência quando alguma coisa simplesmente não funciona!</p>
+    </div>
+
+    <div class="card">
+      <h3>Carol</h3>
+      <div class="subject">Artes</div>
+      <p>Obrigado por mostrar que criatividade não tem limites. Mesmo quando nosso desenho parece outra coisa!</p>
+    </div>
+
+    <div class="card">
+      <h3>Adriano</h3>
+      <div class="subject">Filosofia</div>
+      <p>Obrigado por nos ensinar a pensar. Agora temos perguntas até para as perguntas!</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="special">
+  <div class="section-title">
+    <h2>E também temos um agradecimento especial </h2>
+    <p>Porque algumas pessoas marcaram nossa caminhada de outras maneiras.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Maurício</h3>
+      <div class="subject">Antigo professor de História e tutor</div>
+      <p>Obrigado por todos os ensinamentos, conselhos e momentos que fizeram parte da nossa história. Você continua fazendo parte dela!</p>
+    </div>
+
+    <div class="card">
+      <h3>Luana</h3>
+      <div class="subject">Coordenadora</div>
+      <p>Obrigado pela dedicação, paciência e por estar sempre ajudando a tornar nossa escola um lugar melhor!</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="final">
+  <h2>Uma última mensagem...</h2>
+
+  <p>
+    Talvez a gente esqueça algumas fórmulas, datas, regras gramaticais
+    e até algumas matérias inteiras...
+    Mas não vamos esquecer das pessoas que fizeram parte dessa jornada.
+    <br><br>
+    Obrigado por cada ensinamento, conselho, risada e até pelas broncas.
+    Vocês fizeram a diferença!
+  </p>
+
+  <h2>Com carinho, Thiago!</h2>
+</section>
+
+<footer>
+  Feito com carinho pelo Thiago • 2026
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
